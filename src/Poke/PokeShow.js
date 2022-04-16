@@ -1,44 +1,44 @@
 import React from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams } from 'react-router'
 import { getIndividualPokemon } from '../lib/api'
 
 
-function PokeShow(){
+function PokeShow() {
   const { pokemonId } = useParams()
-  const [pokemon, setPokemon] = React.useState()
+  const [pokemon, setPokemon] = React.useState(null)
 
   console.log(pokemonId)
 
-  React.useEffect(() => {
-    const getData = async () => {
-      try {
-        const { data } = await getIndividualPokemon(pokemonId)
-        setPokemon(data)
-      } catch (err) {
-        console.log(err)
-      }
-    }
-    getData()
-  }, [pokemonId])
-
-  console.log(pokemonId)
-  // const fetchPokemon = React.useCallback(() => {
+  // React.useEffect(() => {
   //   const getData = async () => {
   //     try {
-  //       const res = await getIndividualPokemon(pokemonId)
-  //       return setPokemon(res.data)
+  //       const { data } = await getIndividualPokemon(pokemonId)
+  //       setPokemon(data)
   //     } catch (err) {
   //       console.log(err)
-  //       return
   //     }
-    
   //   }
   //   getData()
   // }, [pokemonId])
 
-  // React.useEffect(() => {
-  //   fetchPokemon()
-  // }, [pokemonId, fetchPokemon])
+  console.log(pokemonId)
+  const fetchPokemon = React.useCallback(() => {
+    const getData = async () => {
+      try {
+        const res = await getIndividualPokemon(pokemonId)
+        return setPokemon(res.data)
+      } catch (err) {
+        console.log('err')
+        return
+      }
+    
+    }
+    getData()
+  }, [pokemonId])
+
+  React.useEffect(() => {
+    fetchPokemon()
+  }, [pokemonId, fetchPokemon])
 
   return (
     <section>
@@ -55,8 +55,8 @@ function PokeShow(){
             </div>
             <div>
               <figure>
-                <img src={pokemonId.sprite} alt={pokemon.name} height={500} width= {700}/>
-              </figure>      
+                <img src={pokemon.sprite} alt={pokemon.name} />
+              </figure>
             </div>
           </div>
 
