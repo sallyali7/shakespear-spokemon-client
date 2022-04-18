@@ -61,7 +61,7 @@ function PokeShow() {
           </div>
 
         ) : (
-          <p>loading</p>
+          <p>Loading</p>
         )
         }
       </div>
