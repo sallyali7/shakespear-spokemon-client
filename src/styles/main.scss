@@ -1,0 +1,65 @@
+
+.pokeindex {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  flex-direction: row;
+  height: inherit;
+}
+.search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  height: 40px;
+  margin-top: 100px;
+  border-radius: 25px;
+  border-color:  lightgray;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}
+.searchbox{
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: inherit;
+  margin-top: 250px;
+  
+}
+.pokemonmain { 
+
+  display: flex;
+  justify-content: center space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  flex-direction: row;
+  height: inherit;
+
+}
+.pokecard {
+
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    flex-direction: row;
+    height: inherit;
+    padding: 5px;
+    text-decoration: none;
+}
+h3.pokename {
+  color: black;
+  text-decoration: none!important;
+ font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+.pokeshow{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+

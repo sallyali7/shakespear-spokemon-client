@@ -1,9 +1,11 @@
 import React from 'react'
+
 import { getAllPokemon } from '../lib/api'
 import PokeCard from '../Poke/PokeCard'
 
 
 function PokeIndex() {
+
   const [pokemon, setPokemon] = React.useState(null)
   const [searchedValue, setSearchedValue] = React.useState('')
 
@@ -28,6 +30,7 @@ function PokeIndex() {
   console.log(searchedValue) // test
 
 
+
   const filteredPokemons = (pokemon) => {
     return pokemon.filter(pokemon => {
       return (
@@ -35,21 +38,23 @@ function PokeIndex() {
       )
     })
   }
-
   return (
-    <section>
-      <input className="Search" type="search" placeholder="Pokemon Search..." onChange={handleSearch}/>
-      {pokemon &&
+    <section className="hero">
+      <div className="searchbox">
+        <input className="search" type="search" placeholder=" Search Pokemon..." onChange={handleSearch}/>
+      </div>
+      <div className="pokeindex">
+        <div className="pokemonmain">
+          {pokemon &&
           filteredPokemons(pokemon).map(pokemon => (
             <PokeCard
               key={pokemon._id}
               name={pokemon.name}
-              sprite={pokemon.sprite}
-              pokemonId={pokemon._id}
-            />
+              pokemonId={pokemon._id} />
           ))
-      }
-
+          }
+        </div>
+      </div>
     </section>
   )
 }

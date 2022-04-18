@@ -1,16 +1,15 @@
 import { Link } from 'react-router-dom'
 
-function PokeCard({ pokemonId, name, sprite, description }) {
+function PokeCard({ pokemonId, name,  description }) {
   return (
-    <section>
+    <section className="pokecard">
       <div>
         <div>
-          <h5>{name}</h5>
-          <p>{description}</p>
+          <Link to={`/pokemon/${pokemonId}`}>
+            <h3 className="pokename">{name}</h3>
+            <p className="pokedescription">{description}</p>
+          </Link>
         </div>
-        <Link to={`/pokemon/${pokemonId}`}>
-          <img src={sprite} alt={name}/>
-        </Link>
       </div>
     </section>
   )

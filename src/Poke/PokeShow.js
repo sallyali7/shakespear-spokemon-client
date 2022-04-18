@@ -1,5 +1,5 @@
 import React from 'react'
-import { useParams } from 'react-router'
+import { useParams } from 'react-router-dom'
 import { getIndividualPokemon } from '../lib/api'
 
 
@@ -41,20 +41,20 @@ function PokeShow() {
   }, [pokemonId, fetchPokemon])
 
   return (
-    <section>
+    <section className="pokeshow">
       <div>
         {pokemon ? (
           <div>
-            <h2>
+            <h2 className="pokemonname">
               {pokemon.name}
             </h2>
             <div>
-              <p>
+              <p className="pokemondescription">
                 {pokemon.description}             
               </p>
             </div>
             <div>
-              <figure>
+              <figure className="pokemonimage">
                 <img src={pokemon.sprite} alt={pokemon.name} />
               </figure>
             </div>
