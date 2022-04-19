@@ -1,11 +1,12 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
 import { getIndividualPokemon } from '../lib/api'
-
+import Error from '../lib/Error'
 
 function PokeShow() {
   const { pokemonId } = useParams()
   const [pokemon, setPokemon] = React.useState(null)
+  const [isError, setIsError] = React.useState(null)
 
   console.log(pokemonId)
 
@@ -16,7 +17,7 @@ function PokeShow() {
         const res = await getIndividualPokemon(pokemonId)
         return setPokemon(res.data)
       } catch (err) {
-        console.log('err')
+        setIsError(true)
         return
       }
     
@@ -30,6 +31,7 @@ function PokeShow() {
 
   return (
     <section className="pokeshow">
+      {isError && <Error />}
       <div>
         {pokemon ? (
           <div>

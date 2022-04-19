@@ -1,5 +1,5 @@
 import React from 'react'
-
+import Error from '../lib/Error'
 import { getAllPokemon } from '../lib/api'
 import PokeCard from '../Poke/PokeCard'
 
@@ -8,7 +8,8 @@ function PokeIndex() {
 
   const [pokemon, setPokemon] = React.useState(null)
   const [searchedValue, setSearchedValue] = React.useState('')
-
+  const [isError, setIsError] = React.useState(false)
+  const isLoading = !pokemon && !isError
 
   React.useEffect(() => {
     const getData = async () => {
@@ -16,7 +17,7 @@ function PokeIndex() {
         const res = await getAllPokemon()
         setPokemon(res.data)
       } catch (err) {
-        console.log(err)
+        setIsError(true)
       }
     }
     getData()
@@ -41,10 +42,12 @@ function PokeIndex() {
   return (
     <section className="hero">
       <div className="searchbox">
-        <input className="search" type="search" placeholder=" Search Pokemon..." onChange={handleSearch}/>
+        <input className="search" id="search" role="search" onChange={handleSearch}  placeholder=" Search Pokemon.."/>
       </div>
       <div className="pokeindex">
         <div className="pokemonmain">
+          {isLoading && <p role="loading">...loading</p>}
+          {isError && <Error />}
           {pokemon &&
           filteredPokemons(pokemon).map(pokemon => (
             <PokeCard 
