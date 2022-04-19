@@ -9,18 +9,6 @@ function PokeShow() {
 
   console.log(pokemonId)
 
-  // React.useEffect(() => {
-  //   const getData = async () => {
-  //     try {
-  //       const { data } = await getIndividualPokemon(pokemonId)
-  //       setPokemon(data)
-  //     } catch (err) {
-  //       console.log(err)
-  //     }
-  //   }
-  //   getData()
-  // }, [pokemonId])
-
   console.log(pokemonId)
   const fetchPokemon = React.useCallback(() => {
     const getData = async () => {

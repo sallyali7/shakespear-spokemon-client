@@ -47,7 +47,7 @@ function PokeIndex() {
         <div className="pokemonmain">
           {pokemon &&
           filteredPokemons(pokemon).map(pokemon => (
-            <PokeCard
+            <PokeCard 
               key={pokemon._id}
               name={pokemon.name}
               pokemonId={pokemon._id} />
