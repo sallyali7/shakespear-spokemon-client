@@ -78,13 +78,18 @@ return (
               pokemonId={pokemon._id} />
 
 ```
+## Images ##
+### Main Page ### 
 
+![imagename](src/assets/mainpage.png)
 
+### Search ### 
 
+![imagename](src/assets/search.png)
 
+### Display ###
 
-
-
+![imagename](src/assets/display.png)
 
 
 
