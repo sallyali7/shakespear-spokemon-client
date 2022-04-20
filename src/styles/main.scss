@@ -7,17 +7,39 @@
   flex-direction: row;
   height: inherit;
 }
+.header{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 100px;
+  font-size: 75px;
+  padding: 2px;
+  max-height: 250px;
+  max-width: auto;
+
+}
+.blue {
+  color: #4285F4;
+}
+.green {
+  color: #0F9D58;
+}
+.yellow {
+  color: #F4B400;
+}
+.red {
+  color: #DB4437;
+}
 .search {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 400px;
-  height: 40px;
-  margin-top: 100px;
-  border-radius: 25px;
-  border-color:  lightgray;
+  width: 584px;
+  height: 44px;
+  padding-left: 10px;
+  border-radius: 24px;
+  border: 1px solid #dfe1e5;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-
 }
 .searchbox{
 
@@ -25,17 +47,18 @@
   justify-content: center;
   align-items: center;
   height: inherit;
-  margin-top: 250px;
+
   
 }
 .pokemonmain { 
 
   display: flex;
-  justify-content: center space-between;
+  justify-content: space-around;
   flex-wrap: wrap;
   align-items: center;
   flex-direction: row;
   height: inherit;
+ 
 
 }
 .pokecard {
@@ -53,8 +76,11 @@ a {
   text-decoration: none;
 }
 h3.pokename {
-  color: black;
- font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+  font-size: 14px;
+  font-weight: lighter;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #3c4043;
+  text-align: center;
 }
 
 .pokeshow{

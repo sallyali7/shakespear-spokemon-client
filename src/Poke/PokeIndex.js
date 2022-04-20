@@ -40,9 +40,18 @@ function PokeIndex() {
     })
   }
   return (
-    <section className="hero">
+    <section>
+      <div className="header">
+        <h1 className="blue">P</h1>
+        <h1 className="red">O</h1>
+        <h1 className="yellow">K</h1>
+        <h1 className="blue">E</h1>
+        <h1 className="green">M</h1>
+        <h1 className="red">O</h1>
+        <h1 className="yellow">N</h1>
+      </div>
       <div className="searchbox">
-        <input className="search" id="search" role="search" onChange={handleSearch}  placeholder=" Search Pokemon.."/>
+        <input className="search" id="search" role="search" onChange={handleSearch}  placeholder="Search Pokemon.."/>
       </div>
       <div className="pokeindex">
         <div className="pokemonmain">
